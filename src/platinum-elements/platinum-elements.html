@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../components/webcomponentsjs/webcomponents-lite.js"></script>
+        <link rel="import" href="../components/platinum-sw/platinum-sw-register.html">
+        <link rel="import" href="../components/platinum-sw/platinum-sw-cache.html">
+    </head>
+    <body unresolved>
+        <h3>Hello from Platinum elements!</h3>
+        <platinum-sw-register auto-register skip-waiting clients-claim reload-on-install>
+            <platinum-sw-cache default-cache-strategy="networkFirst"></platinum-sw-cache>
+        </platinum-sw-register>
+    </body>
+</html>
