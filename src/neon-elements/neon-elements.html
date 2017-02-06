@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../components/webcomponentsjs/webcomponents-lite.js"></script>
+        <link rel="import" href="../components/neon-animation/neon-animation.html">
+    </head>
+    <body unresolved>
+        <h3>Hello from Neon elements!</h3>
+        <my-animation><p>Click on me to animate!</p></my-animation>
+        <dom-module id="my-animation">
+            <template>
+                <style>
+                    :host {
+                        position: absolute;
+                    }
+                </style>
+                <content></content>
+            </template>
+        </dom-module>
+        <script>
+            HTMLImports.whenReady(function () {
+                Polymer({
+                    is: 'my-animation',
+                    behaviors: [Polymer.NeonAnimationRunnerBehavior],
+                    properties: {
+                        animationConfig: {
+                            value: function () {
+                                return {
+                                // provided by neon-animation/animations/scale-down-animation.html
+                                    name: 'scale-down-animation',
+                                    node: this
+                                }
+                            }
+                        }
+                    },
+                    listeners: {
+                        // this event is fired when the animation finishes
+                        'neon-animation-finish': '_onNeonAnimationFinish',
+                        // this event is fired when the user tap on the content children
+                        'tap': 'animate'
+                    },
+                    animate: function() {
+                        // run scale-down-animation
+                        this.playAnimation();
+                    },
+                    _onNeonAnimationFinish: function() {
+                        console.log('animation done!');
+                    }
+                });
+            });   
+        </script>
+    </body>
+</html>

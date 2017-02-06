@@ -1,0 +1,22 @@
+{
+  "name": "demos",
+  "description": "Polymer elements demos",
+  "main": "index.js",
+  "authors": [
+    "Antonio José Barrios León"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer#^1.7.1",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.4.3",
+    "paper-input": "PolymerElements/paper-input#^1.1.23"
+  }
+}
